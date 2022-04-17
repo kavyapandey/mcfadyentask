@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Navbar } from "./Navbar";
+import { CustomCarousel } from "./CustomCarousel";
+import { Footer } from "./Footer";
+import { LeftPage } from "./LeftPage";
+import { CenterPage } from "./CenterPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-3">
+            <LeftPage />
+          </div>
+          <div className="col-sm-6 desktop-image-view">
+            <CenterPage />
+          </div>
+          <div className="col-sm-3">
+            <CustomCarousel />
+          </div>
+        </div>
+        <Footer />
+      </div>
+    </>
   );
 }
-
 export default App;
